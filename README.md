@@ -1,2 +1,4 @@
-"# one-sentence-per-line" 
-"# one-sentence-per-line"  
+"# sentences-per-line" 
+
+Contributed markdownlint rule for limiting sentence per line.
+

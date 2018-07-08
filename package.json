@@ -1,0 +1,20 @@
+{
+  "name": "sentences-per-line",
+  "version": "0.1.0",
+  "description": "Contributed markdownlint rule for limiting sentence per line.",
+  "main": "index.js",
+  "dependencies": {
+    "markdownlint": "^0.10.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaKGoldberg/one-sentence-per-line.git"
+  },
+  "author": "Josh Goldberg <joshuakgoldberg@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshuaKGoldberg/one-sentence-per-line/issues"
+  },
+  "homepage": "https://github.com/JoshuaKGoldberg/one-sentence-per-line#readme"
+}
