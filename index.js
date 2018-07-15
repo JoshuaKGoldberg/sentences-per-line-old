@@ -47,7 +47,14 @@ const getNextIndexNotInCode = (line, i) => {
 }
 
 const visitLine = (line, lineIndex, onError) => {
-  for (let i = 0; i < line.length - 2; i += 1) {
+  let i = 0;
+
+  // Ignore any starting list number, e.g. "1. " or " 1. "
+  if (/^\s*\d+\./.test(line)) {
+    i = line.indexOf(".") + 1;
+  }
+
+  for (; i < line.length - 2; i += 1) {
     i = getNextIndexNotInCode(line, i);
     if (i === undefined) {
       return;
