@@ -44,10 +44,34 @@ const getNextIndexNotInCode = (line, i) => {
   }
 
   return i;
+};
+
+const ignoredWords = [
+  "ie",
+  "i.e",
+  "eg",
+  "e.g",
+  "etc",
+  "ex",
+]
+
+const isAfterIgnoredWord = (line, i) => {
+  for (const ignoredWord of ignoredWords) {
+    if (ignoredWord === line.substring(i - ignoredWord.length, i).toLowerCase()) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 const visitLine = (line, lineIndex, onError) => {
   let i = 0;
+
+  // Ignore headings
+  if (/^\s*#/.test(line)) {
+    return;
+  }
 
   // Ignore any starting list number, e.g. "1. " or " 1. "
   if (/^\s*\d+\./.test(line)) {
@@ -60,8 +84,13 @@ const visitLine = (line, lineIndex, onError) => {
       return;
     }
 
-    if (line[i] === "." && line[i + 1] === " " && isCapitalizedAlphabetCharacter(line[i + 2])) {
-      shared.addError(onError, lineIndex, null, line.substr(Math.max(0, i - 3), 7));
+    if (
+      line[i] === "."
+      && line[i + 1] === " "
+      && isCapitalizedAlphabetCharacter(line[i + 2])
+      && !isAfterIgnoredWord(line, i)
+    ) {
+      shared.addError(onError, lineIndex, null, line.substr(Math.max(0, i - 7), 14));
     }
   }
 };
