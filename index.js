@@ -80,7 +80,7 @@ const visitLine = (line, lineIndex, onError) => {
 
   for (; i < line.length - 2; i += 1) {
     i = getNextIndexNotInCode(line, i);
-    if (i === undefined) {
+    if (i === undefined || i >= line.length - 2) {
       return;
     }
 
