@@ -1,6 +1,6 @@
 {
   "name": "sentences-per-line",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Contributed markdownlint rule for limiting sentence per line.",
   "main": "index.js",
   "dependencies": {
