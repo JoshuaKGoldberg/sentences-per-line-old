@@ -11,7 +11,7 @@ A [markdownlint](https://github.com/DavidAnson/markdownlint) rule that enforces 
 In other words, sentences-per-line makes sure no line contains more than one sentence.
 This is useful because:
 
-- Shorter lines result in simpler, easier-to-understand
+- Shorter lines result in simpler, easier-to-understand Git diffs
 - Longer lines are harder to read in source code
 
 ## Usage
