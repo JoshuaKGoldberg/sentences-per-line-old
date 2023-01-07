@@ -1,15 +1,29 @@
 # sentences-per-line
 
-Contributed markdownlint rule for limiting sentence per line.
+A [markdownlint](https://github.com/DavidAnson/markdownlint) rule that enforces each sentence is on its own line.
+
+```diff
+- First sentence. Second sentence.
++ First sentence.
++ Second sentence.
+```
+
+In other words, sentences-per-line makes sure no line contains more than one sentence.
+This is useful because:
+
+- Shorter lines result in simpler, easier-to-understand
+- Longer lines are harder to read in source code
 
 ## Usage
 
+First install this package as a devDependency:
+
 ```shell
-markdownlint --rules ./node_modules/sentences-per-line/index.js
+npm i -D sentences-per-line
 ```
 
-## Notes
+Then provide it to [markdownlint-cli's `--rules`](https://github.com/igorshubovych/markdownlint-cli)
 
-This uses internal APIs from markdownlint.
-It could break any day.
-Good luck!
+```shell
+markdownlint --rules sentences-per-line
+```
