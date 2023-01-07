@@ -22,7 +22,7 @@ First install this package as a devDependency:
 npm i -D sentences-per-line
 ```
 
-Then provide it to [markdownlint-cli's `--rules`](https://github.com/igorshubovych/markdownlint-cli)
+Then provide it to [markdownlint-cli's `--rules`](https://github.com/igorshubovych/markdownlint-cli):
 
 ```shell
 markdownlint --rules sentences-per-line
